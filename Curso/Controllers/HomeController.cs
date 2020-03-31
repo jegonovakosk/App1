@@ -4,7 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Curso.Models;
+using Curso.Models.ViewsModel;
 
 namespace Curso.Controllers
 {
