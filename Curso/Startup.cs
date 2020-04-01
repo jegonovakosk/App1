@@ -37,7 +37,8 @@ namespace Curso
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
             services.AddDbContext<CursoContext>(options =>
-                    options.UseSqlServer(Configuration.GetConnectionString("CursoContext")));
+                //options.UseSqlServer(Configuration.GetConnectionString("CursoContext")));
+                options.UseMySql(Configuration.GetConnectionString("CursoContext"), builder => builder.MigrationsAssembly("Curso")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -61,7 +62,7 @@ namespace Curso
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                    template: "{controller=Departaments1}/{action=Index}/{id?}");
             });
         }
     }
